@@ -2,8 +2,8 @@
 import cityTimezones from "https://esm.sh/city-timezones@v1.2.0";
 
 function getLocalDate(utcDate, geoInfo) {
-  // context.geo may not contain all keys (eg. city, subdivision, country)
-
+  // turn geoInfo into a string
+  // note: context.geo may not contain all keys (eg. city, subdivision, country)
   const locationString = ["city", "subdivision", "country"]
     .filter((locationKey) => locationKey in geoInfo)
     .map((locationKey) => geoInfo[locationKey].name)
